@@ -1,0 +1,22 @@
+<div class="bg-white rounded shadow-md px-4 py-6 h-full max-w-sm mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <img class="h-24 min-w-24 mr-4 rounded-full" [src]="character.image" alt="character.name">
+        <div class="flex-grow">
+            <span class="text-gray-800 align-middle">
+                <div class="h-4 w-4 mr-2 inline-block rounded-full"
+                    [ngClass]="{
+                        'bg-gray-500': character.status === 'unknown',
+                        'bg-green-600': character.status === 'Alive',
+                        'bg-red-500': character.status === 'Dead'
+                    }"></div>
+                {{character.status}}
+            </span>
+            <p class="font-bold text-2xl text-gray-900">{{character.name}}</p>
+            <span class="text-gray-600">{{character.species}} - {{character.gender}}</span>
+        </div>
+    </div>
+    <span class="text-gray-600">Last known location:</span>
+    <p class="text-gray-900 text-lg mb-4">{{character.location.name}}</p>
+    <span class="text-gray-600">First seen in:</span>
+    <p class="text-gray-900 text-lg">{{character.origin.name}}</p>
+</div>
