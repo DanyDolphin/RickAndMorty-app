@@ -4,23 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { CharacterCardComponent } from './character-card/character-card.component';
-import { ViewportTriggerComponent } from './viewport-trigger/viewport-trigger.component';
-import { LoaderComponent } from './loader/loader.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CharacterComponent } from './pages/character/character.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CharacterCardComponent,
-    ViewportTriggerComponent,
-    LoaderComponent
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Character } from '../shared/models';
-import { ClientService } from '../shared/services/client.service';
-import { ViewportTriggerComponent } from '../viewport-trigger/viewport-trigger.component';
+import { Character } from '../../shared/models';
+import { ClientService } from '../../shared/client.service';
+import { ViewportTriggerComponent } from '../../shared/viewport-trigger/viewport-trigger.component';
 
 @Component({
   selector: 'app-home',

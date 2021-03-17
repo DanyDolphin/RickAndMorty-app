@@ -1,0 +1,41 @@
+<h1 class="page-title">
+    <a class="px-4 rounded bg-gray-900 text-white
+        hover:bg-gray-700 transition"
+        routerLink="/">&laquo;</a>
+    {{character.name}}
+</h1>
+<div class="max-w-3xl mx-auto">
+    <div class="flex bg-white rounded shadow-lg">
+        <div class="bg-gray-900">
+            <img [src]="character.image" [alt]="character.name"
+                class="h-60 w-full object-cover"/>
+            <div class="px-4 py-6 text-white">
+                <p>Species: {{character.species}}</p>
+                <p>Gender: {{character.gender}}</p>
+                <p>Type: {{character.type || 'N/A'}}</p>
+                <p>Status: {{character.status}}</p>
+            </div>
+        </div>
+        <div class="px-4 py-6 flex-1">
+            <span class="text-gray-600">Created:</span>
+            <p class="block text-gray-900 text-lg mb-4">
+                {{character.created | date}}
+            </p>
+
+            <span class="text-gray-600">Last known location:</span>
+            <a class="block text-blue-900 text-lg mb-4" [href]="character.location.url" target="_blank">
+                {{character.location.name}}
+            </a>
+            <span class="text-gray-600">First seen in:</span>
+            <a class="block text-blue-900 text-lg mb-4" [href]="character.origin.url">
+                {{character.origin.name}}
+            </a>
+            <span class="text-gray-600">Episodes:</span>
+            <a class="block text-blue-900 text-lg"
+                *ngFor="let episode of character.episode"
+                [href]="episode">
+                {{episode}}
+            </a>
+        </div>
+    </div>
+</div>
